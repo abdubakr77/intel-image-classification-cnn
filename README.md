@@ -1,57 +1,51 @@
-# Intel Image Classification using CNN
+# Intel Image Classification using (Transfer Learning)
 
 ## Overview
-This project focuses on building a multi-class image classification model using deep learning techniques.
+This project focuses on building a robust multi-class image classification model using deep learning techniques. 
 
-The model is trained on the Intel Image Classification dataset to classify images into different natural scene categories.
-
----
-
-## Objective
-- Apply deep learning in a real-world image classification task
-- Understand and implement CNN architectures
-- Improve model performance (accuracy and loss)
+Instead of building a Convolutional Neural Network (CNN) from scratch, this project leverages **Transfer Learning** using the pre-trained **ResNet50** architecture. This approach significantly improves feature extraction, accelerates training, and boosts overall accuracy when classifying natural scenes.
 
 ---
 
 ## Dataset
-The dataset used is the Intel Image Classification dataset, which contains images of the following categories:
-- Buildings
-- Forest
-- Glacier
-- Mountain
-- Sea
-- Street
+The model is trained and evaluated on the **Intel Image Classification dataset**, which contains approximately 24,335 images divided into training, testing, and prediction sets. 
+
+The dataset classifies images into the following **6 categories**:
+* Buildings
+* Forest
+* Glacier
+* Mountain
+* Sea
+* Street
+
+---
+
+## Objectives
+* Apply advanced deep learning techniques to a real-world multi-class image classification task.
+* Utilize the **ResNet50** architecture and Transfer Learning to maximize feature extraction efficiency.
+* Optimize model performance using callbacks to achieve high accuracy and minimal loss while avoiding overfitting.
 
 ---
 
 ## Model Architecture
-The model is based on a Convolutional Neural Network (CNN) and includes:
-- Convolutional layers (Conv2D)
-- Pooling layers (MaxPooling / AveragePooling)
-- Fully connected layers (Dense)
-- Dropout for regularization
+Built with **Keras/TensorFlow**, the model pipeline includes:
+* **Base Model:** Pre-trained `ResNet50` (using ImageNet weights) for powerful spatial feature extraction.
+* **Pooling:** `GlobalAveragePooling` to reduce dimensionality.
+* **Regularization:** `Dropout` layers to prevent the model from overfitting on the training data.
+* **Classification Head:** Fully connected (`Dense`) layers culminating in a `Softmax` activation for the 6-class output.
+* **Optimization Control:** `EarlyStopping` callback monitoring validation loss to automatically halt training at peak performance.
 
 ---
 
 ## Technologies Used
-- Python
-- TensorFlow / Keras (or PyTorch)
-- NumPy
-- Matplotlib
+* **Language:** Python
+* **Deep Learning Framework:** TensorFlow / Keras
+* **Data Manipulation:** NumPy, Pandas
+* **Data Visualization:** Matplotlib
 
 ---
 
 ## Results
-Results will be added after training and evaluation.
+*Training history and evaluation metrics (Accuracy and Loss graphs) will be added here upon the completion of the training process.*
 
 ---
-
-## How to Run
-
-```bash
-git clone https://github.com/your-username/intel-image-classification-cnn.git
-cd intel-image-classification-cnn
-pip install -r requirements.txt
-jupyter notebook
-Then open the notebook file and run the cells step by step.
